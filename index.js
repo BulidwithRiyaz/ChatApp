@@ -20,7 +20,24 @@ async function main() {
   await mongoose.connect('mongodb://127.0.0.1:27017/chatapp');
 }
 
+app.use((req,res,next) =>{
+    req.responseTime = new Date().toString();
+    console.log(req.method,req.path,req.hostname);
+    console.log(req.responseTime);
+    return next();
+})
 
+const accessToken = (req,res,next) =>{
+    let {token} =req.query;
+    if(token === "accessApp"){
+        return next();
+    }
+    return res.send("ACCESS DENIED")
+}
+
+app.get("/",accessToken,(req,res)=>{
+    res.redirect("/chats")
+})
 
 // index route
 
@@ -74,9 +91,7 @@ app.delete("/chats/:id", async(req,res)=>{
     res.redirect('/chats')
 })
 
-app.get("/",(req,res)=>{
-    res.redirect("/chats")
-})
+
 
 app.listen(8080,()=>{
     console.log("app is listing at post 8080");
