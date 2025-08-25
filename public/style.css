@@ -80,31 +80,38 @@
   }
   
   /* Buttons inside msg */
-  .msg form button {
-    padding: 6px 12px;
-    margin-top: 10px;
-    margin-right: 8px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    color: white;
-    font-size: 14px;
-    transition: background 0.3s ease;
-  }
-  
-  .msg form:nth-of-type(1) button {
-    background: #3498db; /* Edit button - blue */
-  }
-  
-  .msg form:nth-of-type(1) button:hover {
-    background: #2980b9;
-  }
-  
-  .msg form:nth-of-type(2) button {
-    background: #e74c3c; /* Delete button - red */
-  }
-  
-  .msg form:nth-of-type(2) button:hover {
-    background: #c0392b;
-  }
-  
+.msg form button {
+  padding: 6px 12px;
+  margin-top: 10px;
+  margin-right: 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+/* Show button - pehla */
+.msg form:nth-of-type(1) button {
+  background: #8e44ad; /* purple */
+}
+.msg form:nth-of-type(1) button:hover {
+  background: #732d91;
+}
+
+/* Edit button - doosra */
+.msg form:nth-of-type(2) button {
+  background: #3498db; /* blue */
+}
+.msg form:nth-of-type(2) button:hover {
+  background: #2980b9;
+}
+
+/* Delete button - teesra */
+.msg form:nth-of-type(3) button {
+  background: #e74c3c; /* red */
+}
+.msg form:nth-of-type(3) button:hover {
+  background: #c0392b;
+}
